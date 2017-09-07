@@ -12,6 +12,6 @@ class StocksTableSeeder extends Seeder
     public function run()
     {
         // Génération de 30 références stock par client
-        factory(App\Project::class, 30)->create();
+        factory(App\Stock::class, 30)->create();
     }
 }

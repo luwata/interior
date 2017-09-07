@@ -17,7 +17,7 @@ class CreateStocksTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('user_id');
             $table->integer('references');
-            $table->string('designations, 100');
+            $table->string('designations', 100);
             $table->integer('quantity');
             $table->enum('status', ['new','used'])->default('new');
             $table->string('origin', 100);

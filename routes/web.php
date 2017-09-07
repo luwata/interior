@@ -12,3 +12,5 @@
 */
 
 Route::get('/', 'FrontController@index');
+
+Route::get('/changeLocale', 'FrontController@changeLocale');

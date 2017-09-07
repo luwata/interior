@@ -79,8 +79,10 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    {{__('interior.home')}}
                 </div>
+
+                <a href="{{ url('/changeLocale')}}">changer</a>
 
                 <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>

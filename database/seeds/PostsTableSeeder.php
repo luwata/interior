@@ -12,14 +12,8 @@ class PostsTableSeeder extends Seeder
     public function run()
     {
         
-    	$allFiles = File::allFiles(public_path('images'));
-
-    	foreach ($allFiles as $file) {
-    		File::delete($file);
-    	}
-
         // Génération de 25 Posts
-        factory(App\Post::class, 2)->create()->each(function($post){
+        factory(App\Post::class, 8)->create()->each(function($post){
 			
 			$nbPictures = rand(1,8);
 

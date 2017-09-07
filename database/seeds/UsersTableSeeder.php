@@ -19,7 +19,7 @@ class UsersTableSeeder extends Seeder
     	}
 
         //
-        factory(App\User::class, 5)->create()->each(function($user){
+        factory(App\User::class, 3)->create()->each(function($user){
 
         	$file = file_get_contents('http://lorempixel.com/400/300/people/'.rand(0,10));
 

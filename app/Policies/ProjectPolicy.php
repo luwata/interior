@@ -19,7 +19,7 @@ class ProjectPolicy
      */
     public function view(User $user, Project $project = null)
     {
-        return false;
+        return true;
     }
 
     /**
