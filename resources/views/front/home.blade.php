@@ -1,3 +1,3 @@
 @extends('layouts.master')
 
-@section('title', 'coucou c'est le front-end)
+@section('title', 'coucou c\'est le front-end')
