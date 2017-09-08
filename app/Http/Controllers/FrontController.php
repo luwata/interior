@@ -14,7 +14,7 @@ class FrontController extends Controller
 
 		app()->setLocale(session('lang'));
 
-		return view('welcome');
+		return view('front.home');
 	}
 
 	public function changeLocale(){
