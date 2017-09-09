@@ -22,6 +22,6 @@ class ChangeLocale
         app()->setLocale($lang);
 
         return $next($request); 
-        // Ce n'est pas une redirection, on continue à executer le code => les contrôleurs
+        // Ce n'est pas une redirection, le setLocale n'est pas squizzé, on continue à executer le code => les contrôleurs
     }
 }

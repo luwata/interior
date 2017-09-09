@@ -9,10 +9,19 @@
 	
 	<!-- Bootstrap 3 -->
     <link href="{{url('css/app.css')}}" rel="stylesheet">
-<!-- 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+
+    <!-- Datatables CSS -->
+    <link href="{{url('css/datatables.css')}}" rel="stylesheet">
+
+    <!-- Buttons datatables CSS -->
+    <link href="{{url('css/buttons.css')}}" rel="stylesheet">
+
+    <!-- Responsive datatables CSS -->
+    <link href="{{url('css/responsive.css')}}" rel="stylesheet">
 	
 	<!-- Custom styles for this template -->
     <link href="{{url('css/dashboard.css')}}" rel="stylesheet">
+
 
 </head>
 <body class="nav-md">
@@ -31,7 +40,6 @@
 		              	<div class="nav toggle">
 		                	<a id="menu_toggle"><i class="fa fa-bars"></i></a>
 		              	</div>
-
 						<!-- top navigation in right -->
 		              	@include('backend.dashboard.partials.topnavright')
 		            </nav>
@@ -42,14 +50,13 @@
         	<!-- page content -->
         	<div class="right_col" role="main">
 
-
+				@yield('content') 
+				
 	        </div>
 	        <!-- /page content -->
 
 	        <!-- footer content -->
-	        <footer>
-	        	<div class="clearfix"></div>
-	        </footer>
+	        @include('backend.dashboard.partials.footer')
 	        <!-- /footer content -->
       	</div>
       	<!-- /main_container -->
@@ -58,15 +65,14 @@
 
 	<!-- Font-Awesome 4 -->
 	<script src="https://use.fontawesome.com/c82eb558ab.js"></script>
+
+	<!-- Lightbox Ekko -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.2.0/ekko-lightbox.min.js"></script>
 	
-	<!-- jQuery -->
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	
-	<!-- Bootstrap 3 Javascript -->
-	<script src="{{'js/app.js'}}"></script>
-<!-- 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
- -->
-	<!--  Theme Scripts -->
+	<!-- Bootstrap 3 Javascript et les Node-modules dependancies -->
+	<script src="{{url('js/app.js')}}"></script>
+
+	<!-- Theme Scripts -->
     <script src="{{url('js/dashboard.js')}}"></script>
 
 </body>

@@ -36,17 +36,24 @@ class UsersTableSeeder extends Seeder
        		[
        			'username' => 'admin',
        			'email' => 'admin@admin.fr',
-       			'role' => 'customer',
+       			'role' => 'administrator',
        			'password' => Hash::make('admin'),
                 'remember_token' => str_random(10),
        		],
-          	[
-            	'username' => 'eres',
-            	'email' => 'contact@eres.com',
-            	'role' => 'customer',
-            	'password' => Hash::make('eres'),
+          [
+            'username' => 'editor',
+            'email' => 'editor@editor.fr',
+            'role' => 'editor',
+            'password' => Hash::make('editor'),
                 'remember_token' => str_random(10),
-          	],
+          ],
+        	[
+          	'username' => 'eres',
+          	'email' => 'contact@eres.com',
+          	'role' => 'customer',
+          	'password' => Hash::make('eres'),
+              'remember_token' => str_random(10),
+        	],
        	]);
 
 

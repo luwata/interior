@@ -17,6 +17,26 @@ class DashController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    //******************************
+    //********** METHODS ***********
+    //******************************
+
+    public function projects()
+    {
+        $foo = 'Project 1';
+
+        return view('backend.dashboard.projects.index', [
+                'foo' => $foo,
+            ]);
+    }
+
+
+
+    //******************************
+    //************ CRUD ************
+    //******************************
+
     public function index()
     {
         //
@@ -30,7 +50,10 @@ class DashController extends Controller
      */
     public function create()
     {
-        //
+        // Policies - voir la classe ProjectPolicy de l'application App/Policies
+        // Un service est transverse, tous les controleurs peuvent accéder aux services
+        // Il est nécessaire de passer la signature Project::class en signature car c'est fait pour avoir une autorisation par rapport à une ressource 
+        $this->authorize('create', Project::class);
     }
 
     /**
@@ -42,6 +65,7 @@ class DashController extends Controller
     public function store(Request $request)
     {
         //
+        $this->authorize('create', Project::class);
     }
 
     /**
@@ -61,9 +85,10 @@ class DashController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Project $project)
     {
         //
+         $this->authorize('create', Project::class);
     }
 
     /**
@@ -73,9 +98,10 @@ class DashController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Project $project)
     {
         //
+         $this->authorize('create', Project::class);
     }
 
     /**

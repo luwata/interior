@@ -27,6 +27,21 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    // On vérifie qu'on est administrateur
+    public function isAdmin(){
+        return $this->role === 'administrator';
+    }
+
+    // On vérifie qu'on est éditeur
+    public function isEditor(){
+        return $this->role ==='editor';
+    }
+
+    // Vérifier si on est propriétaire de la ressource
+    public function owner($resourceId){
+        return $this->id === $resourceId;
+    }
+
     public function pictures(){
         return $this->hasMany(Picture::Class);
     }

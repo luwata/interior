@@ -10,6 +10,13 @@ class ProjectPolicy
 {
     use HandlesAuthorization;
 
+    public function before($user, $ability)
+    {
+        if ( $user->isAdmin() ) {
+            return true;
+        }
+    }
+
     /**
      * Determine whether the user can view the project.
      *
@@ -30,7 +37,15 @@ class ProjectPolicy
      */
     public function create(User $user)
     {
-        //
+        // Si on est un éditeur on pourra créer un projet
+        return $user->isEditor();
+    }
+
+    public function edit(User $user, Project $project)
+    {
+        // J'édite que le project que j'ai déjà crée
+        // return $user->id === $project->user_id;
+        return $user->owner($project->user_id);
     }
 
     /**
@@ -42,7 +57,8 @@ class ProjectPolicy
      */
     public function update(User $user, Project $project)
     {
-        //
+        // mettre à jour un projet que j'ai crée
+        return $user->owner($project->user_id);
     }
 
     /**
@@ -54,6 +70,7 @@ class ProjectPolicy
      */
     public function delete(User $user, Project $project)
     {
-        //
+        // Supprimer un projet que j'ai crée
+        return $user->owner($project->user_id);
     }
 }

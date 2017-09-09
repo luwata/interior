@@ -14,7 +14,7 @@
             <img src="../images/img.jpg" alt="..." class="img-circle profile_img">
           </div>
           <div class="profile_info">
-            <span>Welcome,</span>
+            <span>{{__('interior.welcome')}},</span>
             <h2>Laurent Villet</h2>
           </div>
         </div>
@@ -25,37 +25,37 @@
         <!-- sidebar menu -->
         <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
         	<div class="menu_section">
-                <h3>Administrator</h3>
+                <h3>{{__('interior.administrator')}}</h3>
                 <ul class="nav side-menu">
-                  	<li><a><i class="fa fa-edit"></i> Home <span class="fa fa-chevron-down"></span></a>
+                  	<li><a><i class="fa fa-edit"></i> {{__('interior.home')}} <span class="fa fa-chevron-down"></span></a>
 	                    <ul class="nav child_menu">
-	                    	<li><a href="index.html">Dashboard</a></li>
+	                    	<li><a href="index.html">{{__('interior.dashboard')}}</a></li>
 	                    </ul>
                   	</li>
-                    <li><a><i class="fa fa-user-circle"></i> Accounts <span class="fa fa-chevron-down"></span></a>
+                    <li><a><i class="fa fa-user-circle"></i> {{__('interior.accounts')}} <span class="fa fa-chevron-down"></span></a>
                     	<ul class="nav child_menu">
-                        	<li><a>Customers<span class="fa fa-chevron-down"></span></a>
+                        	<li><a>{{__('interior.customers')}}<span class="fa fa-chevron-down"></span></a>
 	                      		<ul class="nav child_menu">
-		                        	<li class="sub_menu"><a href="#">See all Accounts</a></li>
-		                        	<li><a href="#">Add an Account</a></li>
-		                        	<li><a href="#">Edit or Delete an Account</a></li>
+		                        	<li class="sub_menu"><a href="#">{{__('interior.see_all_accounts')}}</a></li>
+		                        	<li><a href="#">{{__('interior.add_an_account')}}</a></li>
+		                        	<li><a href="#">{{__('interior.edit_or_delete_account')}}</a></li>
 	                      		</ul>
                         	</li>
                       		<li><a>U-Interiors<span class="fa fa-chevron-down"></span></a>
 	                      		<ul class="nav child_menu">
-		                        	<li class="sub_menu"><a href="#">See all Accounts</a></li>
-		                        	<li><a href="#">Add an Account</a></li>
-		                        	<li><a href="#">Edit or Delete an Account</a></li>
+		                        	<li class="sub_menu"><a href="#">{{__('interior.see_all_accounts')}}</a></li>
+		                        	<li><a href="#">{{__('interior.add_an_account')}}</a></li>
+		                        	<li><a href="#">{{__('interior.edit_or_delete_account')}}</a></li>
 	                      		</ul>
                         	</li>
                     	</ul>
                   	</li>
-                  	<li><a><i class="fa fa-desktop"></i> Website Elements <span class="fa fa-chevron-down"></span></a>
+                  	<li><a><i class="fa fa-desktop"></i> {{__('interior.website_elements')}} <span class="fa fa-chevron-down"></span></a>
 	                    <ul class="nav child_menu">              
-		                    <li><a>Our Works<span class="fa fa-chevron-down"></span></a>
+		                    <li><a>{{__('interior.our_works')}}<span class="fa fa-chevron-down"></span></a>
 		                    	<ul class="nav child_menu">
-		                    		<li class="sub_menu"><a href="#">Our Works</a></li>
-		                    		<li><a href="#">See all Works</a></li>
+		                    		<li class="sub_menu"></li>
+		                    		<li><a href="#">{{__('interior.see_all_works')}}</a></li>
                       				<li><a href="#">Add a Work</a></li>
                       				<li><a href="#">Edit or Delete a Work</a></li>
                       				<li><a href="#">Archive a Work</a></li>
@@ -67,7 +67,7 @@
                   	</li>
 	                <li><a><i class="fa fa-cogs"></i> Projects in Progress <span class="fa fa-chevron-down"></span></a>
 	                    <ul class="nav child_menu">
-	                    	<li><a href="project/project_index.html">See and Edit Projects in Progress</a></li>
+	                    	<li><a href="{{route('projects_home')}}">See and Edit Projects in Progress</a></li>
 	                      	<li><a href="#">Add a New Project in Progress</a></li>
 	                      	<li><a href="#">Consult Archives</a></li>
 	                    </ul>

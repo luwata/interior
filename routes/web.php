@@ -13,8 +13,8 @@
 
 Route::get('/', 'FrontController@index')->name('home');
 
-// Route::get('/changeLocale', 'FrontController@changeLocale');
 
+// On change la locale
 Route::get('/locale/{lang}', function($lang){
 
 	session(['lang' => $lang]); // persister le changement de la langue
@@ -38,6 +38,9 @@ Route::get('logout', function(){
 })->name('logout_dashboard');
 
 
+Route::get('dashboard/projects', 'Backend\DashController@projects')->name('projects_home');
+
+
 Route::resource('dashboard', 'Backend\DashController', [
 	'middleware' => 'auth'
 ]);
@@ -46,7 +49,7 @@ Route::resource('dashboard', 'Backend\DashController', [
 // 	function(){
 // 		Route::resource('dashboard', 'Backend\DashController', 
 // 		[
-// 				'middleware' => ['auth', 'roles'],
+// 				'middleware' => ['auth'],
 // 				'names' => [
 // 					'index' =>'dashboard'
 // 				]
