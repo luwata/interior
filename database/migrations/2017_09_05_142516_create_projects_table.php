@@ -20,7 +20,7 @@ class CreateProjectsTable extends Migration
             $table->string('location', 100);
             $table->date('scheduled_at');
             $table->datetime('last_update')->default(\Carbon\Carbon::now());
-            $table->enum('type', ['progress', 'archive'])->default('progress');
+            $table->enum('type', ['progress', 'archived'])->default('progress');
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE');
             $table->timestamps();

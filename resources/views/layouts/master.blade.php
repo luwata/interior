@@ -1,10 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>@yield('title')</title>
-</head>
-<body>
-	@yield('title')
-</body>
+<html lang="fr">
+
+ 	<!-- Head content -->
+	@include('front.partials.head')
+
+  <body>
+
+    @include('front.partials.nav')
+      
+    <main class="container-fluid">
+      
+        @yield('content')
+
+    </main>
+      
+	<!-- footer content -->
+	@include('front.partials.footer')
+	
+  </body>
 </html>

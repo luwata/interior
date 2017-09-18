@@ -1,7 +1,6 @@
 @extends('layouts.backend')
 
 @section('content')
-	{{ $foo }}
 
 		<div class="page-title">
       		<div class="title_left">
@@ -28,39 +27,44 @@
                           		<th style="width: 1%">#</th>
                           		<th style="width: 30%">Project Name</th>
                           		<th>Client name</th>
-                          		<th>Project Progress</th>
                           		<th style="width: 10%">Status</th>
                           		<th>#Edit</th>
                         	</tr>
                       	</thead>
                       	<tbody>
 
-	                        <tr>
-	                          	<td>#</td>
-	                          	<td>
-	                            	<a>Textile Shop Arrangement</a>
-	                            	<br />
-	                            	<small>Created 01.01.2018</small>
-	                          	</td>
-	                          	<td>
-									<a>Sud Express</a>
-	                          	</td>
-	                          	<td class="project_progress">
-	                            	<div class="progress progress_sm">
-	                              		<div class="progress-bar bg-green" role="progressbar" data-transitiongoal="100"></div>
-	                            	</div>
-	                            	<small>100% Complete</small>
-	                          	</td>
-	                          	<td>
-	                            	<button type="button" class="btn btn-success btn-xs">Success</button>
-	                          	</td>
-	                          	<td>
-	                            	<a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
-	                            	<a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-	                            	<a href="#" class="btn btn-warning btn-xs"><i class="fa fa-archive"></i> Archive </a>
-	                            	<a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
-	                          	</td>
-	                        </tr>
+							@forelse($projects as $project)
+						        <tr>
+						        	<td>#</td>
+	                          		<td>
+	                          			<a>{{$project->title}}</a>
+	                            		<br />
+						          		<small>Created {{$project->created_at}}</small>
+									</td>
+		                          	<td>
+										<a>{{$project->user->username}}</a>
+		                          	</td>
+		                          	<td>
+	                            		<button type="button" class="btn btn-success btn-xs">{{$project->type}}</button>
+	                          		</td>
+	                          		<td>
+	                            		<a href="{{route('projects_sheet', $project->id)}}" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
+	                            	
+	                            		<a href="{{route('projects_edit', $project->id)}}" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
+	                            
+	                            		<a href="#" class="btn btn-warning btn-xs"><i class="fa fa-archive"></i> Archive </a>
+	                            		
+	                            		<form action="{{route('dashboard.destroy', $project->id)}}" method="POST">
+						              		{{csrf_field()}}
+						              		{{method_field('DELETE')}}
+						              		<input class="btn btn-danger btn-xs" type="submit" value="Delete" >
+						            	</form>
+						           		
+	                          		</td>
+	                        	</tr>
+						    @empty
+						    	<p>Il n'y a aucun projet !</p>
+						    @endforelse
 	                        
                       	</tbody>
                     </table>
@@ -69,7 +73,7 @@
               	<!-- /x-content -->
             </div>
             <!-- /x-panel -->
-        	<a href="../index.html">
+        	<a href="{{route('dashboard.index')}}">
 				<button type="button" class="btn btn-back" aria-label="Left Align">
 					<span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span>
 					Back

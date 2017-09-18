@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Backend;
 
 use File;
-use Project;
-use Post;
-use Picture;
-use Contact;
+use App\Project;
+use App\Post;
+use App\Picture;
+use App\Contact;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -17,21 +17,6 @@ class DashController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
-    //******************************
-    //********** METHODS ***********
-    //******************************
-
-    public function projects()
-    {
-        $foo = 'Project 1';
-
-        return view('backend.dashboard.projects.index', [
-                'foo' => $foo,
-            ]);
-    }
-
-
 
     //******************************
     //************ CRUD ************
@@ -113,5 +98,14 @@ class DashController extends Controller
     public function destroy($id)
     {
         //
+        $project = Project::findOrFail($id);
+        //$this->authorize('delete', $project);
+
+        $title = $project->title;
+        $project->delete();
+        return redirect()->route('projects_home')->with('message', 'Suppression du projet $title effectué !');
     }
+    // méthode permettant de supprimer une image facilement dans le contrôleur
+    // mettez votre private pour éviter un jour de la connecter à une URI
+
 }

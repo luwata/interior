@@ -11,7 +11,7 @@
         <!-- menu profile quick info -->
         <div class="profile clearfix">
           <div class="profile_pic">
-            <img src="../images/img.jpg" alt="..." class="img-circle profile_img">
+            <img src="{{url('images/img.jpg')}}" alt="..." class="img-circle profile_img">
           </div>
           <div class="profile_info">
             <span>{{__('interior.welcome')}},</span>
@@ -56,26 +56,28 @@
 		                    	<ul class="nav child_menu">
 		                    		<li class="sub_menu"></li>
 		                    		<li><a href="#">{{__('interior.see_all_works')}}</a></li>
-                      				<li><a href="#">Add a Work</a></li>
-                      				<li><a href="#">Edit or Delete a Work</a></li>
-                      				<li><a href="#">Archive a Work</a></li>
-                      				<li><a href="#">Consult Archives</a></li>	
+                      				<li><a href="#">{{__('interior.add_a_work')}}</a></li>
+                      				<li><a href="#">{{__('interior.edit_a_work')}}</a></li>
+                      				<li><a href="#">{{__('interior.archive_a_work')}}</a></li>
+                      				<li><a href="#">{{__('interior.consult_archives')}}</a></li>	
                       			</ul>
                       		</li>
-                      		<li><a href="#">Contact</a></li>				                    
+                      		<li><a href="#">{{__('interior.contact')}}</a></li>				                    
 	                    </ul>
                   	</li>
-	                <li><a><i class="fa fa-cogs"></i> Projects in Progress <span class="fa fa-chevron-down"></span></a>
+	                <li><a><i class="fa fa-cogs"></i> {{__('interior.project_in_progress')}} <span class="fa fa-chevron-down"></span></a>
 	                    <ul class="nav child_menu">
-	                    	<li><a href="{{route('projects_home')}}">See and Edit Projects in Progress</a></li>
-	                      	<li><a href="#">Add a New Project in Progress</a></li>
-	                      	<li><a href="#">Consult Archives</a></li>
+	                    	<li><a href="{{route('projects_home')}}"> {{__('interior.see_and_edit_projects_in_progress')}}</a></li>
+	                      	<li><a href="{{route('posts_home')}}">{{__('interior.see_and_edit_posts_in_progress')}}</a></li>
+                          <li><a href="{{route('projects_create')}}">{{__('interior.add_a_new_project')}}</a></li>
+                          <li><a href="#">{{__('interior.add_a_new_post')}}</a></li>
+	                      	<li><a href="#">{{__('interior.consult_archives')}}</a></li>
 	                    </ul>
 	                </li>
-                  	<li><a><i class="fa fa-table"></i> Stock Managment <span class="fa fa-chevron-down"></span></a>
+                  	<li><a><i class="fa fa-table"></i> {{__('interior.stock_managment')}} <span class="fa fa-chevron-down"></span></a>
 	                    <ul class="nav child_menu">
-	                    	<li><a href="stock/stock_index.html">See all Stocks</a></li>
-	                      	<li><a href="stock/stock_edit.html">Edit a Client Stock</a></li>
+	                    	<li><a href="stock/stock_index.html">{{__('interior.see_all_stocks')}}</a></li>
+	                      	<li><a href="stock/stock_edit.html">{{__('interior.edit_a_client_stock')}}</a></li>
 	                    </ul>
                   	</li>
                 </ul>

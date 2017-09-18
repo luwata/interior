@@ -31,7 +31,7 @@ $factory->define(App\Project::Class, function(Faker\Generator $faker){
 		'location' => $faker->address,
 		'scheduled_at' => $faker->date(),
 		'last_update' => $faker->datetime(),
-		'type' => rand(1,2) == 1 ? 'progress' : 'archive',
+		'type' => rand(1,2) == 1 ? 'progress' : 'archived',
 	];
 });
 

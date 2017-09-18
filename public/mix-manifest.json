@@ -5,6 +5,8 @@
     "/css/datatables.css": "/css/datatables.css",
     "/css/buttons.css": "/css/buttons.css",
     "/css/responsive.css": "/css/responsive.css",
+    "/css/flexslider.css": "/css/flexslider.css",
     "/css/front.css": "/css/front.css",
+    "/js/flexslider.js": "/js/flexslider.js",
     "/js/dashboard.js": "/js/dashboard.js"
 }

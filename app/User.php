@@ -54,5 +54,9 @@ class User extends Authenticatable
         return $this->hasOne(Stock::Class);
     }
 
+    public function scopeCustomers($query){
+        return $query->where('role', '=', 'customer');
+    }
+
 
 }

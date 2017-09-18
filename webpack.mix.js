@@ -13,11 +13,13 @@ let mix = require('laravel-mix');
 
 mix.js('resources/assets/js/app.js', 'public/js')
    .js('resources/assets/js/dashboard.js', 'public/js')
+   .js('resources/assets/js/flexslider.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css')
    .sass('resources/assets/sass/dashboard.scss', 'public/css')
    .sass('resources/assets/sass/datatables.scss', 'public/css')
    .sass('resources/assets/sass/buttons.scss', 'public/css')
    .sass('resources/assets/sass/responsive.scss', 'public/css')
+   .sass('resources/assets/sass/flexslider.scss', 'public/css')
    .sass('resources/assets/sass/front.scss', 'public/css');
    
 

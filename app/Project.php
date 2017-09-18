@@ -8,7 +8,6 @@ class Project extends Model
 {
     //
     protected $fillable = [
-        'name',
         'user_id',
         'title',
         'location',
@@ -24,6 +23,10 @@ class Project extends Model
 
     public function posts(){
     	return $this->hasMany(Post::Class);
+    }
+
+    public function scopeProgress($query){
+        return $query->where('type', '=', 'progress');
     }
 
     
