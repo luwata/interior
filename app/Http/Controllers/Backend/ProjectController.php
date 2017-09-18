@@ -17,7 +17,7 @@ class ProjectController extends Controller
 
     public function index()
 	{
-	    //
+	    //test
 
 	    $projects = Project::orderBy('created_at', 'DESC')->progress()->get();
 
